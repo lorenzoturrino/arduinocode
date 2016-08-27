@@ -9,6 +9,18 @@ void pulsePin(int pin, int sleep=500) {
   digitalWrite(pin, LOW);
 }
 
+void gradientPin(int pin, int step=5) {
+  for(int i = 0; i < 256; i++) {
+    analogWrite(pin, i);
+    delay(step);
+  }
+  for(int i = 0; i < 256; i++) {
+    analogWrite(pin, 255-i);
+    delay(step);
+  }
+}
+
+
 void setup() {
   // put your setup code here, to run once:
   pinMode(ledPin, OUTPUT);
@@ -20,13 +32,13 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  for(int i = 0; i < 10; i++) {
-    pulsePin(ledPin,150);
-    delay(50);
+  for(int i = 0; i < 5; i++) {
+    pulsePin(ledPin,50);
+    delay(10);
   }
 
-  pulsePin(redPin);
-  pulsePin(bluePin);
-  pulsePin(greenPin);
+  gradientPin(redPin);
+  gradientPin(bluePin);
+  gradientPin(greenPin);
 
 }
