@@ -1,7 +1,7 @@
 namespace seg7 {
   int SEG7_OFFSET = 0;
 
-  byte ZERO = B00000000;
+  byte ZERO = B00111111;
   byte ONE = B00000110;
   byte TWO = B01011011;
   byte THREE = B01001111;
@@ -12,13 +12,21 @@ namespace seg7 {
   byte EIGHT = B11111111;
   byte NINE = B11101111;
 
+  void seg7Setup() {
+    for(int i = 0; i < 8; i++) {
+      int pin = i + SEG7_OFFSET;
+      pinMode(pin, OUTPUT);
+      digitalWrite(pin, LOW);
+    }
+  }
 
   void lightByteCode(byte pattern) {
     for(int i = 0; i < 8; i++) {
+      int pin = i + SEG7_OFFSET;
       if(pattern & (1 << i)){
-        digitalWrite(SEG7_OFFSET + i, HIGH);
+        digitalWrite(pin, HIGH);
       } else {
-        digitalWrite(SEG7_OFFSET + i, LOW);
+        digitalWrite(pin, LOW);
       }
     }
   }

@@ -31,14 +31,13 @@ void setup() {
   for(int pin = 0; pin < 6; pin++) {
     pinMode(pin + LED_OFFSET, OUTPUT);
   }
-  for(int pin = 0; pin < 7; pin++) {
-    pinMode(pin + seg7::SEG7_OFFSET, OUTPUT);
-  }
+  seg7::seg7Setup();
   int currentTime = 0;
 }
 
 void loop() {
-  setTime(currentTime);
+  setTime(currentTime % 60);
+  seg7::lightNumber(currentTime / 60);
   currentTime++;
   delay(1000);
 }
