@@ -33,11 +33,8 @@ void setup() {
   }
   for(int pin = 0; pin < 7; pin++) {
     pinMode(pin + seg7::SEG7_OFFSET, OUTPUT);
-    seg7::lightByteCode(B11111100);
   }
   int currentTime = 0;
-
-
 }
 
 void loop() {
