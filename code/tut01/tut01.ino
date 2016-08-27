@@ -7,9 +7,10 @@ void pulsePin(int pin, int sleep=500) {
   digitalWrite(pin, HIGH);
   delay(sleep);
   digitalWrite(pin, LOW);
+  delay(sleep);
 }
 
-void gradientPin(int pin, int step=5a) {
+void gradientPin(int pin, int step=5) {
   for(int i = 0; i < 256; i++) {
     analogWrite(pin, i);
     delay(step);
@@ -20,6 +21,9 @@ void gradientPin(int pin, int step=5a) {
   }
 }
 
+int twoTo(int exponent) {
+  return (int) pow(2.0, (float) exponent);
+}
 
 void setup() {
   // put your setup code here, to run once:
@@ -27,18 +31,22 @@ void setup() {
   pinMode(redPin, OUTPUT);
   pinMode(bluePin, OUTPUT);
   pinMode(greenPin, OUTPUT);
-
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
-  for(int i = 0; i < 5; i++) {
-    pulsePin(ledPin,50);
-    delay(10);
+  // for(int i = 0; i < 5; i++) {
+  //   pulsePin(ledPin,50);
+  //   delay(10);
+  // }
+  //
+  // gradientPin(redPin);
+  // gradientPin(bluePin);
+  // gradientPin(greenPin);
+  delay(1000);
+  for(int i = 0; i < twoTo(3); i++){
+    pulsePin(ledPin, 200);
   }
-
-  gradientPin(redPin);
-  gradientPin(bluePin);
-  gradientPin(greenPin);
+  delay(1000);
 
 }
