@@ -1,5 +1,6 @@
+#include "seg7.h"
+
 int LED_OFFSET = 14;
-int SEG7_OFFSET = 0;
 int currentTime = 0;
 
 
@@ -31,9 +32,12 @@ void setup() {
     pinMode(pin + LED_OFFSET, OUTPUT);
   }
   for(int pin = 0; pin < 7; pin++) {
-    pinMode(pin + SEG7_OFFSET, OUTPUT);
+    pinMode(pin + seg7::SEG7_OFFSET, OUTPUT);
+    seg7::lightByteCode(B11111100);
   }
   int currentTime = 0;
+
+
 }
 
 void loop() {
