@@ -1,7 +1,7 @@
 int LED_OFFSET = 14;
 
 bool byteOn(int time, int pos) {
-  int byteValue = (int) pow((double) 2,(double) base);
+  int byteValue = (int) pow((double) 2,(double) pos);
   if(byteValue > time){
     return false;
   } else {
@@ -16,7 +16,7 @@ void setTime(int time){
     if(byteOn(time, pin)) {
       digitalWrite(pin, HIGH);
     } else {
-      digitalWrite(pin, Low);
+      digitalWrite(pin, LOW);
     }
   }
 }
