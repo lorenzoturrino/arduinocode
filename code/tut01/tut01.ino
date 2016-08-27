@@ -9,7 +9,7 @@ void pulsePin(int pin, int sleep=500) {
   digitalWrite(pin, LOW);
 }
 
-void gradientPin(int pin, int step=5) {
+void gradientPin(int pin, int step=5a) {
   for(int i = 0; i < 256; i++) {
     analogWrite(pin, i);
     delay(step);
