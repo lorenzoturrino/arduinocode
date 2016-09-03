@@ -35,3 +35,4 @@ namespace seg7 {
   void lightNumber(int num) {
     lightByteCode(patterns[num]);
   }
+}

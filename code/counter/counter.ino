@@ -36,7 +36,7 @@ void setup() {
 }
 
 void loop() {
-  setTime(currentTime % 60);
+  // setTime(currentTime % 60);
   seg7::lightNumber(currentTime / 60);
   currentTime++;
   delay(1000);
