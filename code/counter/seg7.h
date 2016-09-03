@@ -1,6 +1,6 @@
 namespace seg7 {
-  int SEG7_OFFSET = 0;
-  byte patterns[10] = {
+  const int SEG7_OFFSET = 0;
+  const byte patterns[10] = {
     B00111111,
     B00000110,
     B01011011,
