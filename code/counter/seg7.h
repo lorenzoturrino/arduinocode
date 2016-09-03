@@ -1,6 +1,19 @@
 namespace seg7 {
   int SEG7_OFFSET = 0;
 
+  byte patterns[10] = {
+    B00111111,
+    B00000110,
+    B01011011,
+    B01001111,
+    B01100110,
+    B01101101,
+    B11111101,
+    B00000111,
+    B11111111,
+    B11101111
+  };
+
   byte ZERO = B00111111;
   byte ONE = B00000110;
   byte TWO = B01011011;
@@ -30,6 +43,11 @@ namespace seg7 {
       }
     }
   }
+
+  void lightNumberPattern(int num) {
+    lightByteCode(patterns[num]);
+  }
+
 
   void lightNumber(int num) {
     byte convertedNum;
