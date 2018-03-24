@@ -1,15 +1,18 @@
 int ledPin = 13;
 
-void setup() {
+void setup()
+{
   // put your setup code here, to run once:
   pinMode(ledPin, OUTPUT);
-  for(int i = 0; i < 20; i++) {
+  for (int i = 0; i < 20; i++)
+  {
     pinMode(i, OUTPUT);
     turnOff(i);
   }
 }
 
-void loop() {
+void loop()
+{
   // put your main code here, to run repeatedly:
   turnOn(ledPin);
   delay(50);
@@ -17,10 +20,12 @@ void loop() {
   delay(5000);
 }
 
-void turnOn(int pin) {
+void turnOn(int pin)
+{
   digitalWrite(pin, HIGH);
 }
 
-void turnOff(int pin) {
+void turnOff(int pin)
+{
   digitalWrite(pin, LOW);
 }
