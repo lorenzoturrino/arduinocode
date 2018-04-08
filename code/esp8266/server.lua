@@ -1,7 +1,10 @@
 local server = net.createServer(net.TCP, 10)
 
 function handler(conn)
-    conn:on('receive', function(socket, data) socket.close() end)
+    conn:on('receive', function(socket, data)
+        print(data) 
+        socket:close() 
+    end)
     conn:send('hello world')
 end
 
