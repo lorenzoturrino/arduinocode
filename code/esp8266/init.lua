@@ -6,4 +6,4 @@ function init_job()
     dofile('server.lua')
 end
 
-tmr.create():alarm(1000, tmr.ALARM_SINGLE, init_job)
+tmr.create():alarm(2000, tmr.ALARM_SINGLE, init_job)
