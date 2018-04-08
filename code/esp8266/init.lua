@@ -1,7 +1,8 @@
-print('init file, executing in 500ms')
+print('init file, executing in 1000ms')
 
 function init_job()
     dofile("basescript.lua")
+    dofile("server.lua")
 end
 
-tmr.create():alarm(500, tmr.ALARM_SINGLE, init_job)
+tmr.create():alarm(1000, tmr.ALARM_SINGLE, init_job)

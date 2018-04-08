@@ -2,11 +2,5 @@
 local WRITEPIN = 1
 gpio.mode(WRITEPIN, gpio.OUTPUT)
 
-function serout_2()
-  gpio.mode(2, gpio.OUTPUT)
-  gpio.serout(2, gpio.HIGH, {150000, 50000}, 10)
-end
-
-gpio.serout(WRITEPIN, gpio.HIGH, {150000, 50000}, 10, serout_2)
-
+gpio.serout(WRITEPIN, gpio.HIGH, {25000, 50000}, 10)
 print('init end')
