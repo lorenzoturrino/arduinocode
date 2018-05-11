@@ -1,1 +1,1 @@
-Repo to stash the code for my arduino experiments. Not really useful without board schematics I guess. Sorry.
+Arduino, Esp8266 and friends. Some experiments and tinkering.
