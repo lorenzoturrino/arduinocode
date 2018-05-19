@@ -1,7 +1,8 @@
-function ambient_read()
-    print('reading ambient data')
-    local COMM_PIN = 1
-    local status, temperature, humidity, _, _ = dht.read(COMM_PIN)
-    print('done with ' .. status .. ' temp: ' .. temperature .. ' humidity: ' .. humidity)
-    return status, temperature, humidity
+function ambient_read(comm_pin)
+    local status, temperature, humidity = dht.read(comm_pin)
+    if status ~= 0 then
+        return -100, -100
+    else
+        return temperature, humidity
+    end
 end
