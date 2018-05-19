@@ -4,16 +4,6 @@ function power_down()
     wifi.setmode(wifi.NULLMODE)
 end
 
-function list_ap()
-    function print_out_table(tab)
-        print('Tab values:')
-        for k, v in pairs(tab) do print(k ..  ' : ' .. v) end
-    end
-
-    wifi.setmode(wifi.STATION)
-    wifi.sta.getap(print_out_table)
-end
-
 function connect_wifi(ssid, pass)
     if not (ssid and pass) then
         print('powering down due to missing credentials')
