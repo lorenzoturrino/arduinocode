@@ -22,7 +22,7 @@ end
 
 function credential_reader()
     if file.open('wifi_credentials.txt') then
-        return string.gsub(file.readline(), '\n', ''), file.readline()
+        return string.gsub(file.readline(), '\n', ''), string.gsub(file.readline(), '\n', '')
     end
 end
 
@@ -51,5 +51,5 @@ wifi.eventmon.register(wifi.eventmon.STA_CONNECTED, connection_success_handler)
 wifi.eventmon.register(wifi.eventmon.STA_GOT_IP, ip_acquired_handler)
 wifi.eventmon.register(wifi.eventmon.STA_DISCONNECTED, disconnection_handler)
 
-connect_wifi(credential_reader())
+-- connect_wifi(credential_reader())
 print('wifi configured')
