@@ -1,4 +1,2 @@
-env
 lua_rom.bin
-node_modules
 wifi_credentials.txt
